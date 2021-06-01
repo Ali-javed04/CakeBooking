@@ -1,0 +1,62 @@
+.custom-div {
+  justify-content: center;
+  display: flex;
+}
+.custom-bg {
+  background: #fbf9f9;
+    border: 1px solid #efe7e7;
+  padding: 30px;
+  border-radius: 10px;
+}
+.custom-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 26px;
+  margin-top: -63px;
+}
+.custom-label {
+  font-size: medium;
+    font-weight: bold;
+    font-family: cursive;
+
+}
+.input-checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid #999;
+  transition: 0.2s all linear;
+  margin-right: 5px;
+
+  position: relative;
+  top: 4px;
+}
+
+.input-checkbox:checked {
+  border: 6px solid black;
+  outline: unset !important /* I added this one for Edge (chromium) support */
+}
+.larger {
+  transform: scale(2);
+  margin: 30px;
+}
+.price-h {
+  font-weight: bold;
+  font-family: cursive;
+  color: rgba(201, 137, 221, 0.9);
+}
+.submit-btn {
+  background: rgba(133, 202, 250, 0.9);
+  margin-top: 32px;
+  color: white;
+}
+.price-c {
+  font-weight: bold;
+  font-family: cursive;
+  color: rgba(133, 202, 250, 0.9);
+}

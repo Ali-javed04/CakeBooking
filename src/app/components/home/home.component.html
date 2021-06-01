@@ -1,0 +1,112 @@
+<div class="container mt-4 mb-4">
+  <div class="row custom-div">
+    <h2 class="text-center price-h"> Make Your Cake</h2>
+  </div>
+  <div class="row custom-div mt-4">
+    <div class="col-8 custom-bg">
+      <div class="row custom-div">
+        <img src="/assets/cake1.jpg" class="custom-img" alt="">
+      </div>
+
+    <div class="form-group row">
+      <div class="form-group col-12">
+        <label class="custom-label mt-4"  >Select the Size of Cake</label><br>
+        <div class="mt-2">
+          <input type="radio"  name="selectedcake" value="Round6" class="input-checkbox mt-2"(change)="changeCakeSize(20)"
+          />
+         Round cake 6" -  serves 8 people ($20)<br>
+        </div>
+        <div class="mt-2">
+          <input type="radio"  name="selectedcake" value="Round8" class="input-checkbox mt-2"(change)="changeCakeSize(25)"
+          />
+         Round cake 8" - serves 12 people ($25)<br>
+        </div>
+        <div class="mt-2">
+          <input type="radio"  name="selectedcake" value="Round10" class="input-checkbox mt-2"(change)="changeCakeSize(35)"
+          />
+         Round cake 10" - serves 16 people($35)<br>
+        </div>
+        <div class="mt-2">
+          <input type="radio"  name="selectedcake" value="Round12" class="input-checkbox mt-2"(change)="changeCakeSize(75)"
+          />
+         Round cake 12" - serves 30 people($75)<br>
+        </div>
+
+
+
+
+
+
+      </div>
+      <div class="form-group col-12">
+        <div class="col-6">
+          <label class="custom-label mt-4" >Filling</label>
+          <select class="form-control mt-2" [(ngModel)]="fillingPrice" (change)="onChangeFilling(fillingPrice)">
+
+            <option *ngFor="let item of fillings" [ngValue]="item.price">{{item.name}}</option>
+          </select>
+        </div>
+
+
+      </div>
+    </div>
+    <!-- 2nd row  -->
+    <div class="form-group row">
+      <div class="form-group col-12">
+        <input class="larger" type="checkbox" [(ngModel)]="includeCandles" (change)="checkValue(includeCandles? 5: -5)">
+        <label class="custom-label mt-4" >Include Candles($5)</label>
+
+
+      </div>
+      <div class="form-group col-12">
+        <input type="checkbox" class="larger" [(ngModel)]="inscriptionCheckBox" (change)="checkValue(inscriptionCheckBox? 20: -20)">
+        <label class="custom-label mt-4" >Include Inscription($20)</label><br>
+        <input *ngIf="inscriptionCheckBox" type="text" placeholder="Please Enter Your Inscription" class="form-control" [(ngModel)]="inscriptionText">
+
+
+
+      </div>
+    </div>
+    <!-- 3rd row   -->
+    <h2 *ngIf="total != 0" class="price-h mt-4">Total Price For the Cake is ${{total}}</h2>
+
+    </div>
+  </div>
+
+  <!-- contact-detail  -->
+
+    <div class="row custom-div mt-4">
+      <h2 class="text-center price-c"> Contact Details</h2>
+    </div>
+    <div class="row custom-div mt-4">
+      <div class="col-8 custom-bg">
+        <div class="form group row">
+          <div class="col">
+            <label>Name</label>
+            <input type="text" class="form-control mt-2" placeholder="Enter your Name" [(ngModel)]="personName">
+          </div>
+          <div class="col">
+            <label>Address</label>
+            <input type="text" class="form-control mt-2" placeholder="Enter your Address"  [(ngModel)]="personAddress">
+          </div>
+
+
+        </div>
+        <div class="form group row mt-4">
+          <div class="col">
+            <label>Phone Number</label>
+            <input type="text" class="form-control mt-2" placeholder="Enter your Phone Number"  [(ngModel)]="personPhoneNumber">
+          </div>
+          <div class="col">
+            <button class="btn form-control submit-btn" (click)="contactInfo()">Submit</button>
+          </div>
+
+
+        </div>
+
+
+      </div>
+    </div>
+
+
+</div>
